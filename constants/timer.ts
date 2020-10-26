@@ -1,0 +1,1 @@
+export const checking_time = 5000;//5s

@@ -1,0 +1,13 @@
+.next
+node_modules
+.env
+.DS_Store
+.vercel
+.log
+*.log
+debug.log
+public/workbox-*.js
+public/workbox-*.js.map
+public/sw.js
+public/sw.js.map
+public/worker-*.js
