@@ -63,6 +63,13 @@ export interface IGrocery {
   about_us: [II18N];
 }
 
+export interface IPlan {
+  name: string;
+  price: number;
+  tooltip: string;
+  descriptions: string[]  
+}
+
 export interface ISimpleProduct {
   id: string;
   title: string;

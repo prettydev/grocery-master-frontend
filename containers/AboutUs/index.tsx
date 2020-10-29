@@ -1,54 +1,35 @@
 import React from "react";
 import { colors } from "../../constants/theme";
 
+const About1 = require("../../images/about1.gif");
+const About2 = require("../../images/about2.jpg");
+
 const AboutUs = () => {
   return (
-    <div
-      id="about"
-      style={{
-        background: `url('${require("./banner.svg")}') no-repeat center center`,
-        backgroundSize: "cover",
-      }}
-      className="w-screen min-h-screen flex"
-    >
-      <div className="w-full sm:w-1/2 h-full flex">
-        <div className="text-left justify-items-start mx-auto my-8 sm:mt-48 flex flex-col gap-12 w-4/5 sm:w-3/5">
-          <h1 className="text-black text-4xl mt-8">DEPT_X EVENT</h1>
-          <p className="text-xl">
-            We will hold the Kanahei's live printing during the Hunger Run.
-            Comel Design and create your own T-shirt or Tote bag with your
-            favorite image. Let's go and have fun.
+    <div id="about" className="min-h-screen">
+      <div className="flex flex-row items-center mt-16 mx-32 gap-8">
+        <div className="">
+          <img src={About1} />
+        </div>
+        <div className="">
+          <span className="text-6xl">Introducing the future of Grocery</span>
+          <p className="text-2xl mt-8">
+            Whether you are running a single grocery store, a food supermarket
+            chain or if you are responsible for the IT department of a food
+            retailer have a look at our Grosery Commerce Software. We think
+            you’ll be impressed.
           </p>
-          <table>
-            <tr>
-              <td>
-                <span className="font-bold">Date:</span>
-              </td>
-              <td>{new Date().toLocaleDateString()}</td>
-            </tr>
-            <tr>
-              <td>
-                <span className="font-bold">Location:</span>
-              </td>
-              <td>
-                {"Tseung Kwan O Jockey Club HKFA Football Traning Centre"}
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <span className="font-bold">Time:</span>
-              </td>
-              <td>{new Date().toLocaleDateString()}</td>
-            </tr>
-          </table>
-          <div className="text-center sm:text-left">
-            <button
-              className="p-4 w-2/3 sm:w-1/3 text-white font-bold rounded-full"
-              style={{ backgroundColor: colors.primary }}
-            >
-              REGISTER NOW
-            </button>
-          </div>
+        </div>
+      </div>
+      <div className="flex flex-row items-center mt-16 mx-32 gap-8 justify-between">
+        <div className="w-1/2 text-left px-12">
+          <div className="text-5xl">Create Grocery</div>
+          <div className="text-5xl">List Items</div>
+          <div className="text-5xl">Choose Delivery Slots</div>
+          <div className="text-5xl">Start Receiving Orders</div>
+        </div>
+        <div className="">
+          <img src={About2} className="object-cover h-96" />
         </div>
       </div>
     </div>

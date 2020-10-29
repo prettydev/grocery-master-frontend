@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import { Transition } from "@tailwindui/react";
-import Banner from "../../containers/Banner";
-import Events from "../../containers/Events";
-import Register from "../../containers/Register";
+import TopGroceries from "../../containers/TopGroceries";
+import Pricing from "../../containers/Pricing";
+import ContactUs from "../../containers/ContactUs";
 import AboutUs from "../../containers/AboutUs";
 
 import ScrollSpyMenu from "../../components/ScrollSpyMenu";
@@ -13,20 +13,35 @@ import closeIcon from "@iconify/icons-ion/close";
 
 const menuData = [
   {
-    label: "HOME",
-    path: "#banner",
+    label: "Login",
+    path: "/auth/login",
+    staticLink: true,
   },
   {
-    label: "ABOUT US",
+    label: "Register",
+    path: "/auth/register",
+    staticLink: true,
+  },
+  {
+    label: "Create Grocery",
+    path: "/groceries",
+    staticLink: true,
+  },
+  {
+    label: "Groceries",
+    path: "#top_groceries",
+  },
+  {
+    label: "Pricing",
+    path: "#pricing",
+  },
+  {
+    label: "About Us",
     path: "#about",
   },
   {
-    label: "ORDER INSTRUCTION",
-    path: "#events",
-  },
-  {
-    label: "REGISTER",
-    path: "#register",
+    label: "Contact us",
+    path: "#contact",
   },
 ];
 
@@ -36,10 +51,10 @@ const Home = () => {
   return (
     <>
       <div className="overflow-hidden flex flex-col min-h-screen overflow-x-hidden">
-        <Banner key="banner" />
+        <TopGroceries key="top_groceries" />
         <AboutUs key="about" />
-        <Events key="events" />
-        <Register key="register" />
+        <Pricing key="plan" />
+        <ContactUs key="contact" />
       </div>
       <button
         className="fixed top-8 left-8 text-4xl z-10 text-gray-300 hover:text-white transition ease-in-out duration-150"
@@ -63,7 +78,7 @@ const Home = () => {
             <div
               ref={ref}
               className="py-auto origin-top-right fixed left-0 sm:w-80 min-h-screen rounded-md shadow-lg"
-              style={{ backgroundColor: "#b8c11c" }}
+              style={{ backgroundColor: "#b8c11cdd" }}
             >
               <ScrollSpyMenu
                 className="mt-24 sm:mt-48 text-white ml-2 sm:ml-8"

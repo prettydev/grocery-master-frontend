@@ -6,11 +6,11 @@ import { colors } from "../../constants/theme";
 import GroceryCard from "../../components/GroceryCard";
 const BannerImage = require("../../images/banner.png");
 
-const Banner = () => {
+const TopGroceries = () => {
   const groceries = useTopGroceries();
 
   return (
-    <div id="banner" className="min-h-screen">
+    <div id="top_groceries" className="min-h-screen">
       <div>
         <img src={BannerImage} className="h-96 object-cover w-full" />
       </div>
@@ -27,9 +27,7 @@ const Banner = () => {
       <div className="mt-16 mx-32">
         <div className="inline-flex gap-8">
           {groceries.map((g, i) => (
-            <div className="">
-              <GroceryCard key={i} grocery={g} />
-            </div>
+            <GroceryCard key={i} grocery={g} />
           ))}
         </div>
       </div>
@@ -37,4 +35,4 @@ const Banner = () => {
   );
 };
 
-export default Banner;
+export default TopGroceries;
