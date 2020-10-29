@@ -80,10 +80,22 @@ const Pricing = () => {
 
   return (
     <div id="pricing" className="min-h-screen">
-      <div className="text-center">
-        <h1 className="text-6xl m-16">Choose Your Plan</h1>
+      <div className="text-center mt-24">
+        <span className="text-red-500 font-bold text-xl">Pricing Plans</span>
+        <h1 className="text-6xl font-bold">Choose Your Plan</h1>
       </div>
-      <div className="flex flex-row mx-32 gap-4 justify-center">
+      <div
+        style={{
+          background: `url('${require("../../images/bar.jpg")}') no-repeat center center`,
+          backgroundSize: "cover",
+        }}
+        className=" flex-auto w-full h-64 flex mt-16"
+      >
+        <h1 className="text-white text-6xl font-bold my-auto mx-auto">
+          Live in 60 seconds
+        </h1>
+      </div>
+      <div className="flex flex-row mx-32 gap-4 justify-center mt-4">
         {plans.map((p, i) => (
           <PlanCard plan={p} onStart={onPlan} />
         ))}

@@ -54,6 +54,13 @@ export interface IPlan {
   descriptions: string[]  
 }
 
+export interface IReview {
+  rate: number;
+  review: string;
+  customer: string;
+  location: string;
+}
+
 export interface ISocial {
   name: string;
   email: string;

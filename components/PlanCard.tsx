@@ -3,7 +3,14 @@ import { IPlan } from "../constants/types";
 
 const PlanCard = ({ plan, onStart }) => {
   return plan ? (
-    <div className="max-w-sm rounded overflow-hidden shadow-lg">
+    <div className="max-w-sm rounded overflow-hidden shadow-xl">
+      {plan.name === "Standard" && (
+        <div className={`w-full flex justify-end pr-6`}>
+          <h1 className="absolute text-lg bg-green-600 px-2 rounded-md opacity-100 text-white">
+            Best Value
+          </h1>
+        </div>
+      )}
       <div className="ml-8 mt-8 text-red-500 font-bold text-2xl">
         {plan.name}
       </div>

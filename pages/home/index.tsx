@@ -77,7 +77,7 @@ const Home = () => {
           {(ref) => (
             <div
               ref={ref}
-              className="py-auto origin-top-right fixed left-0 sm:w-80 min-h-screen rounded-md shadow-lg"
+              className="py-auto origin-top-right fixed left-0 sm:w-80 min-h-screen rounded-md shadow-xl"
               style={{ backgroundColor: "#b8c11cdd" }}
             >
               <ScrollSpyMenu

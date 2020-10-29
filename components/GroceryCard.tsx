@@ -3,7 +3,7 @@ import { IGrocery } from "../constants/types";
 
 const GroceryCard = ({ grocery }: { grocery: IGrocery }) => {
   return grocery ? (
-    <div className="max-w-sm rounded overflow-hidden shadow-lg">
+    <div className="max-w-sm rounded overflow-hidden shadow-xl">
       <img
         className="w-full"
         src={grocery.logo.link}
