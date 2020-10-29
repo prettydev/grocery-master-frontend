@@ -23,22 +23,6 @@ export interface ILink {
   link: string;
 }
 
-export interface IProduct {
-  id: string;
-  title: string;
-  asin: string;
-  link: string;
-  categories: [ICategory];
-  main_image: ILink;
-  price: number;
-  description: string;
-  specifications: [ISpecificatiion];
-  feature_bullets: [string];
-  buybox_winner: IBuybox_winner;
-  images: [IImage];
-  active: boolean;
-}
-
 export interface II18N {
   lang: string;
   value: string;

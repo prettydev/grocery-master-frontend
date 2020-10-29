@@ -341,34 +341,6 @@ export const GET_AUCTION_LIVE_TIMER_QUERY = gql`
   }
 `;
 
-export const ORDERS_QUERY = gql`
-  query Orders($pageArgs: PageArgs!, $filter: Filter!) {
-    orders(pageArgs: $pageArgs, filter: $filter) {
-      arr {
-        id
-        amount
-        user {
-          id
-          email
-          username
-          avatar
-          note_channels
-          note_cases
-        }
-        product {
-          title
-          asin
-          link
-          main_image {
-            link
-          }
-        }
-      }
-      cnt
-    }
-  }
-`;
-
 //wishes query
 export const LISTINGS_QUERY = gql`
   query Listings($pageArgs: PageArgs!, $filter: Filter!, $user_id: String!) {
@@ -456,239 +428,6 @@ export const MESSAGES_QUERY = gql`
 export const WISHES_QUERY = gql`
   query MyWishes($user_id: String!) {
     mywishes(user_id: $user_id)
-  }
-`;
-
-export const EXHIBIT_DETAILS_QUERY = gql`
-  query Exhibit($exhibit_id: String!) {
-    exhibit(exhibit_id: $exhibit_id) {
-      exhibit {
-        id
-        product {
-          title
-          asin
-          link
-          image
-          price
-          category
-        }
-        funders {
-          user {
-            id
-            email
-            username
-            avatar
-          }
-          amount
-        }
-        fund_amount
-        fund_percent
-        manual
-      }
-      product {
-        title
-        asin
-        link
-        categories {
-          name
-          link
-        }
-        main_image {
-          link
-        }
-        description
-        specifications {
-          name
-          value
-        }
-        feature_bullets
-        buybox_winner {
-          price {
-            currency
-            raw
-            symbol
-            value
-          }
-        }
-        images {
-          link
-          variant
-        }
-      }
-    }
-  }
-`;
-
-export const AUCTION_DETAILS_QUERY = gql`
-  query Auction($auction_id: String!, $user_id: String!) {
-    auction(auction_id: $auction_id, user_id: $user_id) {
-      auction {
-        id
-        product {
-          title
-          asin
-          link
-          image
-          price
-          category
-        }
-        funders {
-          user {
-            id
-            email
-            username
-            avatar
-          }
-          amount
-        }
-        bidders {
-          user {
-            id
-            email
-            username
-            avatar
-            coins
-          }
-          value
-        }
-        autos {
-          user {
-            id
-            email
-            username
-            avatar
-            coins
-          }
-          value
-        }
-        watchers
-        chatters
-        state
-        timer
-        live_timer
-        bid_speed
-        fund_amount
-        fund_percent
-        manual
-      }
-      product {
-        title
-        asin
-        link
-        categories {
-          name
-          link
-        }
-        main_image {
-          link
-        }
-        description
-        specifications {
-          name
-          value
-        }
-        feature_bullets
-        buybox_winner {
-          price {
-            currency
-            raw
-            symbol
-            value
-          }
-        }
-        images {
-          link
-          variant
-        }
-      }
-    }
-  }
-`;
-
-export const HISTORY_DETAILS_QUERY = gql`
-  query History($history_id: String!) {
-    history(history_id: $history_id) {
-      history {
-        id
-        product {
-          title
-          asin
-          link
-          image
-          price
-          category
-        }
-        funders {
-          user {
-            id
-            email
-            username
-            avatar
-          }
-          amount
-        }
-        bidders {
-          user {
-            id
-            email
-            username
-            avatar
-            coins
-          }
-          value
-        }
-        autos {
-          user {
-            id
-            email
-            username
-            avatar
-            coins
-          }
-          value
-        }
-        winner {
-          avatar
-          username
-        }
-        state
-        timer
-        fund_amount
-        fund_percent
-        tracking
-        manual
-      }
-      product {
-        title
-        asin
-        link
-        categories {
-          name
-          link
-        }
-        main_image {
-          link
-        }
-        description
-        specifications {
-          name
-          value
-        }
-        feature_bullets
-        buybox_winner {
-          price {
-            currency
-            raw
-            symbol
-            value
-          }
-        }
-        images {
-          link
-          variant
-        }
-      }
-    }
   }
 `;
 
@@ -842,39 +581,51 @@ export const FB_POSTS_QUERY = gql`
 
 //////////////////////////////////////////////////////////////////
 
-export const ADMIN_PRODUCTS_QUERY = gql`
-  query AdminProducts($pageArgs: PageArgs!, $filter: Filter!) {
-    admin_products(pageArgs: $pageArgs, filter: $filter) {
+export const GROCERIES_QUERY = gql`
+  query Groceries($pageArgs: PageArgs!, $filter: Filter!) {
+    groceries(pageArgs: $pageArgs, filter: $filter) {
       arr {
-        title
-        asin
-        link
-        categories {
-          name
+        name
+        second_lang
+        mobile
+        owner_email
+        bank_account
+        contact_email
+        contact_phone
+        opening_hours
+        delivery_radius
+        min_order
+        first_offer_discount
+        is_collect 
+        logo {
           link
-        }
-        main_image {
-          link
-        }
-        description
-        specifications {
-          name
-          value
-        }
-        feature_bullets
-        buybox_winner {
-          price {
-            currency
-            raw
-            symbol
-            value
-          }
         }
         images {
           link
           variant
+        }          
+        location {
+          address
+          lng
+          lat
         }
-        active
+        credit_card {
+          card_number
+          expired_date
+          cvv
+        }
+        description {
+          lang
+          value
+        }
+        delivery_policy {
+          lang
+          value
+        }
+        about_us {
+          lang
+          value
+        }
       }
       cnt
     }
