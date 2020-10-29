@@ -19,7 +19,7 @@ const tailLayout = {
 
 const Login = () => {
   const {
-    mapState: { socket, user },
+    mapState: { user },
     setMapState,
   } = useMapState();
 
@@ -57,7 +57,7 @@ const Login = () => {
   return (
     <MainLayout>
       {error && (
-        <Alert message={"User not exist!"} type="error" showIcon closable />
+        <Alert message={error.message} type="error" showIcon closable />
       )}
       <div
         style={{

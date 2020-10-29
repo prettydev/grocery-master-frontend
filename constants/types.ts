@@ -97,19 +97,11 @@ export interface IUser {
   avatar: string;
   phone: string;
   plan: string;
-  role: string;
-  wins: number;
-  coins: number;
-  points: number;
+  role: string;  
   email_verified: boolean;
-  phone_verified: boolean;
-  badges: IBadgeDate[];
-  friends: IFriendDate[];
-  note_channels: [string];
-  note_cases: [string];
+  phone_verified: boolean;  
   facebook: ISocial;
-  google: ISocial;
-  twitter: ISocial;
+  google: ISocial;  
   created_at: Date;
   updated_at: Date;
 }

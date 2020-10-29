@@ -109,10 +109,6 @@ const Social = () => {
           transform: "translate(-50%, -50%)",
         }}
       >
-        {/* {error && (
-          <Alert message={"User not exist!"} type="error" showIcon closable />
-        )} */}
-
         <Space
           size="large"
           direction="vertical"

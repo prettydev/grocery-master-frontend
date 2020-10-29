@@ -10,14 +10,8 @@ export const USER_SUBSCRIPTION = gql`
       phone
       plan
       role
-      wins
-      coins
-      points
       email_verified
       phone_verified
-      note_channels
-      note_cases
-      created_at
       facebook {
         name
         email
@@ -27,44 +21,8 @@ export const USER_SUBSCRIPTION = gql`
         name
         email
         image
-      }
-      twitter {
-        name
-        email
-        image
-      }
-      badges {
-        badge {
-          id
-        }
-        created_at
-      }
-      friends {
-        friend {
-          id
-          email
-          username
-          avatar
-        }
-        created_at
-      }
-      note_channels
-    }
-  }
-`;
-
-export const GAME_SUBSCRIPTION = gql`
-  subscription GameUpdated($user_id: String!) {
-    gameUpdated(user_id: $user_id) {
-      badge {
-        title
-        points
-      }
-      userUpdated {
-        id
-        email
-        username
-      }
+      }      
+      created_at
     }
   }
 `;
@@ -96,35 +54,6 @@ export const MESSAGE_SUBSCRIPTION = gql`
       avatar
       content
       created_at
-    }
-  }
-`;
-
-export const CURRENT_EXHIBIT_SUBSCRIPTION = gql`
-  subscription ExhibitUpdated($exhibit_id: String!) {
-    exhibitUpdated(exhibit_id: $exhibit_id) {
-      id
-      product {
-        title
-        asin
-        link
-        image
-        price
-        category
-      }
-      funders {
-        user {
-          id
-          email
-          username
-          avatar
-          coins
-        }
-        amount
-      }
-      fund_amount
-      fund_percent
-      manual
     }
   }
 `;
@@ -185,79 +114,6 @@ export const CURRENT_AUCTION_SUBSCRIPTION = gql`
         manual
       } 
       timestamp
-    }
-  }
-`;
-
-export const CURRENT_HISTORY_SUBSCRIPTION = gql`
-  subscription HistoryUpdated($history_id: String!) {
-    historyUpdated(history_id: $history_id) {
-      id
-      product {
-        title
-        asin
-        link
-        image
-        price
-        category
-      }
-      funders {
-        user {
-          id
-          email
-          username
-          avatar
-          coins
-        }
-        amount
-      }
-      bidders {
-        user {
-          id
-          email
-          username
-          avatar
-          coins
-        }
-        value
-      }
-      autos {
-        user {
-          id
-          email
-          username
-          avatar
-          coins
-        }
-        value
-      }
-      watchers
-      chatters
-      timer
-      fund_amount
-      fund_percent
-      manual
-    }
-  }
-`;
-
-export const CURRENT_STATISTICS_SUBSCRIPTION = gql`
-  subscription CurrentStatistics {
-    currentUpdated {
-      online_users
-      online_bid_users
-      bids_per_action
-    }
-  }
-`;
-
-export const HISTORY_STATISTICS_SUBSCRIPTION = gql`
-  subscription HistoryStatistics {
-    historyUpdated {
-      total_actions
-      total_winners
-      max_users
-      bids_per_action
     }
   }
 `;

@@ -39,20 +39,6 @@ export default function NavBar() {
     new SecureLS().remove("user");
   };
 
-  useEffect(() => {
-    if (user) {
-      return;
-    }
-    const secureUser = new SecureLS().get("user");
-    if (!secureUser) {
-      return;
-    }
-    setMapState({
-      type: "setUser",
-      user: secureUser,
-    });
-  }, []);
-
   return (
     <div>
       <nav className="relative flex flex-wrap items-center justify-between navbar-expand-lg px-12 border border-b-1 mb-2">

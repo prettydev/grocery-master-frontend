@@ -54,14 +54,8 @@ export const SOCIAL_REGISTER_LOGIN_MUTATION = gql`
         phone
         plan
         role
-        wins
-        coins
-        points
         email_verified
         phone_verified
-        note_channels
-        note_cases
-        created_at
         facebook {
           name
           email
@@ -71,28 +65,8 @@ export const SOCIAL_REGISTER_LOGIN_MUTATION = gql`
           name
           email
           image
-        }
-        twitter {
-          name
-          email
-          image
-        }
-        badges {
-          badge {
-            id
-          }
-          created_at
-        }
-        friends {
-          friend {
-            id
-            email
-            username
-            avatar
-          }
-          created_at
-        }
-        note_channels        
+        }        
+        created_at
       }
       message
     }

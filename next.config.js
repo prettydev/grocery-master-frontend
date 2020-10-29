@@ -21,8 +21,6 @@ const envConfig = {
   FACEBOOK_SECRET: process.env.FACEBOOK_SECRET,
   GOOGLE_ID: process.env.GOOGLE_ID,
   GOOGLE_SECRET: process.env.GOOGLE_SECRET,
-  TWITTER_ID: process.env.TWITTER_ID,
-  TWITTER_SECRET: process.env.TWITTER_SECRET,
   EMAIL_SERVER: process.env.EMAIL_SERVER,
   EMAIL_FROM: process.env.EMAIL_FROM,
   DATABASE_URL: process.env.DATABASE_URL,

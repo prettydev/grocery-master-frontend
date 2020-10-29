@@ -11,9 +11,6 @@ import { Col, Row, Space, Typography, Card } from "antd";
 import {
   FacebookOutlined,
   GoogleOutlined,
-  TwitterOutlined,
-  MailOutlined,
-  PhoneOutlined,
   UserOutlined,
   CalendarOutlined,
 } from "@ant-design/icons";
@@ -22,7 +19,6 @@ import { useMapState } from "../../context/store";
 import MainLayout from "../../layouts/MainLayout";
 import { USER_QUERY } from "../../apis/queries";
 import { IUser } from "../../constants/types";
-import Badge from "../../components/Badge4User";
 
 const Win = require("../../images/win.png");
 const Coin = require("../../images/coin.png");
@@ -106,27 +102,10 @@ export default function Profile() {
                       <h1 className="px-2 text-sm">Google</h1>
                     </div>
                   )}
-                  {!!profile.twitter && !!profile.twitter.email && (
-                    <div className="flex items-center mt-4 text-gray-700">
-                      <TwitterOutlined className="text-lg" />
-                      <h1 className="px-2 text-sm">Twitter</h1>
-                    </div>
-                  )}
                 </div>
               </Card>
             </div>
-            <div className="w-3/4">
-              <h1 className="text-2xl font-bold p-4">Awarded Badges</h1>
-              {!!profile.badges && (
-                <Row gutter={[16, 16]}>
-                  {profile.badges.map((b, idx) => (
-                    <Col xs={24} sm={12} md={8} lg={6} xl={6} xxl={4} key={idx}>
-                      <Badge badge={b.badge} />
-                    </Col>
-                  ))}
-                </Row>
-              )}
-            </div>
+            <div className="w-3/4"></div>
           </div>
         </>
       )}
