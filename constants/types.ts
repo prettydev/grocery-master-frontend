@@ -1,24 +1,8 @@
-export interface ICategory {
-  name: string;
-  link: string;
-}
-export interface ISpecificatiion {
-  name: string;
-  value: string;
-}
-export interface IPrice {
-  currency: string;
-  raw: string;
-  symbol: string;
-  value: number;
-}
-export interface IBuybox_winner {
-  price: IPrice;
-}
 export interface IImage {
   link: string;
   variant: string;
 }
+
 export interface ILink {
   link: string;
 }
@@ -68,16 +52,6 @@ export interface IPlan {
   price: number;
   tooltip: string;
   descriptions: string[]  
-}
-
-export interface ISimpleProduct {
-  id: string;
-  title: string;
-  asin: string;
-  link: string;
-  category: string;
-  image: string;
-  price: number;
 }
 
 export interface ISocial {
@@ -192,19 +166,6 @@ export interface IContact {
   email: string;
   phoneNumber: string;
   ref: string;
-}
-
-export interface ICurrentStatistics {
-  online_users: number;
-  online_bid_users: number;
-  bids_per_action: number;
-}
-
-export interface IHistoryStatistics {
-  total_actions: number;
-  total_winners: number;
-  max_users: number;
-  bids_per_action: number;
 }
 
 export interface INote {

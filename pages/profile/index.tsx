@@ -24,8 +24,6 @@ import {
 } from "../../components/buttons/SocialButton";
 import PassModal from "../../modals/PassModal";
 
-import { GET_USER_BONUS_QUERY } from "../../apis/queries";
-
 import {
   ADD_SOCIAL_MUTATION,
   CHANGE_AVATAR_MUTATION,
@@ -35,11 +33,6 @@ import {
 } from "../../apis/mutations";
 
 const { TabPane } = Tabs;
-
-const Win = require("../../images/win.png");
-const Coin = require("../../images/coin.png");
-const Point = require("../../images/point.png");
-const Bonus = require("../../images/bonus.png");
 
 const { Title, Text } = Typography;
 
@@ -82,9 +75,6 @@ export default function Profile() {
 
   const [profile_rate, setProfileRate] = useState(0);
 
-  const { data: bonusData } = useQuery(GET_USER_BONUS_QUERY, {
-    variables: { user_id: user ? user.id : "" },
-  });
   const [changeAvatar] = useMutation(CHANGE_AVATAR_MUTATION);
   const [passDlgVisible, setPassDlgVisible] = useState(false);
 
@@ -217,13 +207,6 @@ export default function Profile() {
   }, [session]);
 
   useEffect(() => {
-    if (!bonusData || !bonusData.getBonus) {
-      return;
-    }
-    setBonus(bonusData.getBonus);
-  }, [bonusData]);
-
-  useEffect(() => {
     if (!user || (user && phone === user.phone)) {
       return;
     }
@@ -302,36 +285,10 @@ export default function Profile() {
               >
                 MY NOTIFICATIONS
               </Button>
-              <Button
-                block
-                type="primary"
-                onClick={() => {
-                  router.push("/profile/listings");
-                }}
-              >
-                MY LISTINGS
-              </Button>
-              <Button
-                block
-                type="primary"
-                onClick={() => {
-                  router.push("/profile/friends");
-                }}
-              >
-                MY FRIENDS
-              </Button>
             </Space>
           </div>
           <div className="w-full">
             <Tabs defaultActiveKey="1" type="card">
-              <TabPane tab="Statistics" key="1">
-                <Space direction={"vertical"}>
-                  <Fortune src={Coin} amount={user.coins} text={"Bids paid"} />
-                  <Fortune src={Bonus} amount={bonus} text={"Bonus paid"} />
-                  <Fortune src={Win} amount={user.wins} text={"Wins"} />
-                  <Fortune src={Point} amount={user.points} text={"Points"} />
-                </Space>
-              </TabPane>
               <TabPane tab="Verify Account" key="2">
                 <div className="flex flex-row">
                   <Space direction={"vertical"} className="w-1/3">

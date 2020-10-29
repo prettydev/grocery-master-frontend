@@ -307,8 +307,8 @@ export const EXCHANGE_MUTATION = gql`
 `;
 
 export const PLAN_MUTATION = gql`
-  mutation UpdatePlan($months: Float!, $kind: String!, $user_id: String!) {
-    updatePlan(months: $months, kind: $kind, user_id: $user_id)
+  mutation UpdatePlan($plan_name: String!, $user_id: String!) {
+    updatePlan(plan_name: $plan_name, user_id: $user_id)
   }
 `;
 

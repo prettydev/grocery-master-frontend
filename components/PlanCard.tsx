@@ -1,7 +1,7 @@
 import React from "react";
 import { IPlan } from "../constants/types";
 
-const PlanCard = ({ plan }: { plan: IPlan }) => {
+const PlanCard = ({ plan, onStart }) => {
   return plan ? (
     <div className="max-w-sm rounded overflow-hidden shadow-lg">
       <div className="ml-8 mt-8 text-red-500 font-bold text-2xl">
@@ -17,7 +17,10 @@ const PlanCard = ({ plan }: { plan: IPlan }) => {
         ))}
       </div>
       <div className="w-full mx-auto flex justify-center mb-8">
-        <button className="w-3/5 bg-transparent hover:bg-red-500 text-red-700 font-semibold hover:text-white py-2 px-4 border border-red-500 hover:border-transparent rounded">
+        <button
+          className="w-3/5 bg-transparent hover:bg-red-500 text-red-700 font-semibold hover:text-white py-2 px-4 border border-red-500 hover:border-transparent rounded"
+          onClick={() => onStart(plan.name)}
+        >
           Get Started
         </button>
       </div>
