@@ -13,11 +13,10 @@ import {
 import { menu } from "../constants/menu";
 import { useMapState } from "../context/store";
 import AnimatedText from "../components/AnimatedText";
+import Logo from "../components/Logo";
 
 const SecureLS = require("secure-ls");
 const { Text } = Typography;
-
-const Logo = require("../images/logo.png");
 
 export default function NavBar() {
   const {
@@ -46,11 +45,7 @@ export default function NavBar() {
           <div className="w-full relative flex justify-between lg:w-auto lg:static lg:block lg:justify-start">
             <Link href={"/"}>
               <a className="text-sm font-bold leading-relaxed inline-block py-2 whitespace-no-wrap uppercase text-white">
-                <img
-                  alt="byebyeGROCERY"
-                  src={Logo}
-                  className="element object-contain px-2 w-20"
-                />
+                <Logo />
               </a>
             </Link>
             <button

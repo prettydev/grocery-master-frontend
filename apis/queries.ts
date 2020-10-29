@@ -108,6 +108,54 @@ export const GROCERIES_QUERY = gql`
   }
 `;
 
+export const TOP_GROCERIES_QUERY = gql`
+  query TopGroceries {
+    top_groceries {      
+        name
+        second_lang
+        mobile
+        owner_email
+        bank_account
+        contact_email
+        contact_phone
+        opening_hours
+        delivery_radius
+        min_order
+        first_offer_discount
+        is_collect 
+        logo {
+          link
+        }
+        images {
+          link
+          variant
+        }          
+        location {
+          address
+          lng
+          lat
+        }
+        credit_card {
+          card_number
+          expired_date
+          cvv
+        }
+        description {
+          lang
+          value
+        }
+        delivery_policy {
+          lang
+          value
+        }
+        about_us {
+          lang
+          value
+        }      
+    }
+  }
+`;
+
 export const ADMIN_COMPLETED_QUERY = gql`
   query AdminCompletedAuctions($pageArgs: PageArgs!, $filter: Filter!) {
     admin_completed_auctions(pageArgs: $pageArgs, filter: $filter) {

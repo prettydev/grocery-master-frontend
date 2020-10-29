@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="166" height="166" viewBox="0 0 166 166">
+  <g id="组_2490" data-name="组 2490" transform="translate(-1065 -2692)">
+    <g id="椭圆_113" data-name="椭圆 113" transform="translate(1065 2692)" fill="none" stroke="#fff" stroke-width="3">
+      <circle cx="83" cy="83" r="83" stroke="none"/>
+      <circle cx="83" cy="83" r="81.5" fill="none"/>
+    </g>
+    <g id="组_2439" data-name="组 2439" transform="translate(1 66.594)">
+      <g id="组_2438" data-name="组 2438" transform="translate(1119 2668)">
+        <g id="组_2435" data-name="组 2435" transform="translate(7.663 60.031)">
+          <line id="直线_7" data-name="直线 7" x1="24.197" transform="translate(18.098)" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.89"/>
+          <line id="直线_8" data-name="直线 8" x1="9.896" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.89"/>
+        </g>
+        <line id="直线_9" data-name="直线 9" x1="42.295" transform="translate(7.663 67.035)" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.89"/>
+        <g id="组_2437" data-name="组 2437" transform="translate(9.016 10.409)">
+          <line id="直线_10" data-name="直线 10" y1="4.536" transform="translate(5.619 17.411)" fill="none" stroke="#fff" stroke-miterlimit="10" stroke-width="1.8"/>
+          <g id="组_2436" data-name="组 2436">
+            <rect id="矩形_661" data-name="矩形 661" width="10.371" height="10.371" transform="translate(0.434)" fill="none" stroke="#fff" stroke-miterlimit="10" stroke-width="1.8"/>
+            <rect id="矩形_662" data-name="矩形 662" width="10.371" height="10.371" transform="translate(0.434 28.441)" fill="none" stroke="#fff" stroke-miterlimit="10" stroke-width="1.8"/>
+            <rect id="矩形_663" data-name="矩形 663" width="10.371" height="10.371" transform="translate(28.169)" fill="none" stroke="#fff" stroke-miterlimit="10" stroke-width="1.8"/>
+            <line id="直线_11" data-name="直线 11" y2="11.031" transform="translate(17.005)" fill="none" stroke="#fff" stroke-miterlimit="10" stroke-width="1.8"/>
+            <line id="直线_12" data-name="直线 12" x1="5.184" transform="translate(17.537 5.515)" fill="none" stroke="#fff" stroke-miterlimit="10" stroke-width="1.8"/>
+            <path id="路径_8969" data-name="路径 8969" d="M483.909,236.806h-6.116v5.051h-3.588V249.3h-4.652" transform="translate(-444.439 -219.394)" fill="none" stroke="#fff" stroke-miterlimit="10" stroke-width="1.8"/>
+            <path id="路径_8970" data-name="路径 8970" d="M481.005,246.523v5.317h-9.441" transform="translate(-443.396 -214.357)" fill="none" stroke="#fff" stroke-miterlimit="10" stroke-width="1.8"/>
+            <path id="路径_8971" data-name="路径 8971" d="M453.014,236.806h17.005v4.387h5.716" transform="translate(-453.014 -219.394)" fill="none" stroke="#fff" stroke-miterlimit="10" stroke-width="1.8"/>
+            <line id="直线_13" data-name="直线 13" y2="5.401" transform="translate(21.392 32.166)" fill="none" stroke="#fff" stroke-miterlimit="10" stroke-width="1.8"/>
+            <rect id="矩形_664" data-name="矩形 664" width="1.711" height="1.711" transform="translate(12.569 24.539)" fill="none" stroke="#fff" stroke-miterlimit="10" stroke-width="1.8"/>
+            <rect id="矩形_665" data-name="矩形 665" width="1.711" height="1.711" transform="translate(16.507 28.838)" fill="none" stroke="#fff" stroke-miterlimit="10" stroke-width="1.8"/>
+            <rect id="矩形_666" data-name="矩形 666" width="1.711" height="1.711" transform="translate(24.728 12.496)" fill="none" stroke="#fff" stroke-miterlimit="10" stroke-width="1.8"/>
+            <rect id="矩形_667" data-name="矩形 667" width="1.711" height="1.711" transform="translate(36.828 24.539)" fill="none" stroke="#fff" stroke-miterlimit="10" stroke-width="1.8"/>
+          </g>
+        </g>
+        <rect id="矩形_668" data-name="矩形 668" width="56.51" height="80.27" transform="translate(0 0)" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.89"/>
+      </g>
+    </g>
+  </g>
+</svg>
