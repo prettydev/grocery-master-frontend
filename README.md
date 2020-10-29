@@ -63,3 +63,8 @@ LA>^,p10
 https://www.codesdope.com/blog/article/animate-your-website-elements-with-css-transforms/
 https://codepen.io/Venerons/pen/BvHbK
 https://codepen.io/MarioDesigns/pen/woJgeo
+
+### pwa icon generator
+
+https://cthedot.de/icongen/#output
+https://www.pwabuilder.com/imageGenerator

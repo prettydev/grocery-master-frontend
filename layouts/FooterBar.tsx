@@ -5,6 +5,7 @@ import {
   FacebookFilled,
   TwitterSquareFilled,
   InstagramFilled,
+  YoutubeOutlined,
 } from "@ant-design/icons";
 
 const { Footer } = Layout;
@@ -29,16 +30,10 @@ export default function FooterBar() {
         >
           <Text>
             <Space size="large">
-              <Text strong>Our Company:</Text>
-              <Link href={"/winners"}>
-                <a target="_blank">Winners</a>
-              </Link>
               <Link href={"/about"}>
-                <a target="_blank">About Us</a>
+                <a target="_blank">Licenses</a>
               </Link>
-              <Link href={"/leaderboard"}>
-                <a target="_blank">Leaderboard</a>
-              </Link>
+              <span>@Copyright powered by byebyeGROCERY</span>
             </Space>
           </Text>
         </Col>
@@ -52,20 +47,17 @@ export default function FooterBar() {
           style={{ textAlign: "center" }}
         >
           <Space size="large">
-            <Text strong>Connect Us:</Text>
-            <a
-              href={
-                "https://www.facebook.com/Exhibia-117959396666911/?modal=admin_todo_tour" //"https://www.facebook.com/Exhibia/"
-              }
-              target="_new"
-            >
-              <FacebookFilled style={{ fontSize: 22 }} />
-            </a>
-            <a href={"https://twitter.com/ExhibiaAuction"} target="_new">
+            <a href={"https://twitter.com/"} target="_new">
               <TwitterSquareFilled style={{ fontSize: 22 }} />
+            </a>
+            <a href={"https://www.facebook.com/"} target="_new">
+              <FacebookFilled style={{ fontSize: 22 }} />
             </a>
             <a href={"https://www.instagram.com/"} target="_new">
               <InstagramFilled style={{ fontSize: 22 }} />
+            </a>
+            <a href={"https://www.youtube.com/"} target="_new">
+              <YoutubeOutlined style={{ fontSize: 22 }} />
             </a>
           </Space>
         </Col>

@@ -11,6 +11,7 @@ const envConfig = {
 
   UPLOAD_URL: process.env.UPLOAD_URL,
   CLOUDINARY_PRESET: process.env.CLOUDINARY_PRESET,
+  GOOGLE_KEY: process.env.GOOGLE_KEY,
 
   WEB_PUSH_EMAIL: process.env.WEB_PUSH_EMAIL,
   WEB_PUSH_PRIVATE_KEY: process.env.WEB_PUSH_PRIVATE_KEY,

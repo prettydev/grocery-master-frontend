@@ -43,6 +43,7 @@ const Register = () => {
     console.log(res.data);
     if (res.data.register) {
       message.success("Registration Success!");
+      router.push("/auth/login");
     } else {
       message.error("Registration Failed!");
     }

@@ -12,8 +12,6 @@ import {
   GoogleButton,
 } from "../../components/buttons/SocialButton";
 
-import { useLazyQuery } from "@apollo/client";
-import { LOGIN_QUERY } from "../../apis/queries";
 import { SOCIAL_REGISTER_LOGIN_MUTATION } from "../../apis/mutations";
 
 const SecureLS = require("secure-ls");
@@ -120,7 +118,7 @@ const Social = () => {
           direction="vertical"
           style={{ textAlign: "center", background: "white", padding: 50 }}
         >
-          <Text>Exhibia Online Auctions</Text>
+          <span className="text-2xl">byebyeGROCERY</span>
           <img src={Logo} />
           <FacebookButton
             text="Continue With Facebook"
@@ -128,7 +126,7 @@ const Social = () => {
           />
           <GoogleButton text="Continue With Google" loading={googleLoading} />
           <Text>
-            By continue you agree with Exhibia's Terms of service, privacy
+            By continue you agree with byebyeGROCERY's Terms of service, privacy
             policy
           </Text>
         </Space>

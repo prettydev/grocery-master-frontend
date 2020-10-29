@@ -50,7 +50,7 @@ const Index: FC = () => {
         setRegistration(reg);
       });
     }
-    router.push("/auctions");
+    router.push("/groceries");
   }, []);
 
   const subscribeButtonOnClick = async (event) => {

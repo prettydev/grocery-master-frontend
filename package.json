@@ -1,5 +1,5 @@
 {
-  "name": "exhibia",
+  "name": "byebyegrocery",
   "version": "1.0.0",
   "description": "",
   "scripts": {
@@ -39,6 +39,7 @@
     "next-with-apollo": "^5.1.0",
     "path": "^0.12.7",
     "react": "^16.13.1",
+    "react-cool-onclickoutside": "^1.5.7",
     "react-copy-to-clipboard": "^5.0.2",
     "react-dom": "^16.13.1",
     "react-dom-confetti": "^0.2.0",
@@ -51,6 +52,7 @@
     "react-lines-ellipsis": "^0.14.1",
     "react-overlay-component": "^1.0.2",
     "react-particles-webgl": "^1.0.10",
+    "react-payment-inputs": "^1.1.7",
     "react-paypal-button-v2": "^2.6.2",
     "react-share": "^4.2.1",
     "react-spring": "^8.0.27",
@@ -59,10 +61,13 @@
     "sass": "^1.26.11",
     "secure-ls": "^1.2.6",
     "socket.io-client": "^2.3.0",
+    "styled-components": "^5.2.0",
     "subscriptions-transport-ws": "^0.9.16",
     "sweetalert2": "^10.3.1",
     "sweetalert2-react-content": "^3.2.0",
     "three": "^0.120.1",
+    "use-places-autocomplete": "^1.5.7",
+    "use-position": "^0.0.8",
     "web-push": "^3.4.4",
     "ws": "^7.3.1"
   },

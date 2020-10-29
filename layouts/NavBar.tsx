@@ -3,7 +3,12 @@ import Link from "next/link";
 import { useRouter } from "next/router";
 import { signOut } from "next-auth/client";
 import { Avatar, Typography } from "antd";
-import { LogoutOutlined, MenuOutlined } from "@ant-design/icons";
+import {
+  LogoutOutlined,
+  LoginOutlined,
+  MenuOutlined,
+  UserAddOutlined,
+} from "@ant-design/icons";
 
 import { menu } from "../constants/menu";
 import { useMapState } from "../context/store";
@@ -13,22 +18,6 @@ const SecureLS = require("secure-ls");
 const { Text } = Typography;
 
 const Logo = require("../images/logo.png");
-const Win = require("../images/win.png");
-const Coin = require("../images/coin.png");
-const Point = require("../images/point.png");
-
-const Fortune = ({ src, amount }) => (
-  <div className="flex-1 h-12">
-    <div className="flex items-center mr-2">
-      <img className="w-6 h-6 rounded-full mr-2" src={src} />
-      <div className="text-sm mr-4">
-        <p className="text-gray-900 leading-none">
-          <AnimatedText value={amount} />
-        </p>
-      </div>
-    </div>
-  </div>
-);
 
 export default function NavBar() {
   const {
@@ -72,9 +61,9 @@ export default function NavBar() {
             <Link href={"/"}>
               <a className="text-sm font-bold leading-relaxed inline-block py-2 whitespace-no-wrap uppercase text-white">
                 <img
-                  alt="Exhibia"
+                  alt="byebyeGROCERY"
                   src={Logo}
-                  className="element object-contain w-56 h-auto px-2"
+                  className="element object-contain px-2 w-20"
                 />
               </a>
             </Link>
@@ -106,7 +95,7 @@ export default function NavBar() {
                   </li>
                 ))}
               {user &&
-                user.role === "admin" &&
+                // user.role === "admin" &&
                 menu
                   .filter((m) => m.role === "admin")
                   .map((m) => (
@@ -118,35 +107,39 @@ export default function NavBar() {
                       </Link>
                     </li>
                   ))}
+              {!user && (
+                <li className="nav-item mx-4" key={"/login"}>
+                  <Link href={"/auth/login"}>
+                    <a className="flex flex-row items-center gap-2">
+                      <LoginOutlined />
+                      Login
+                    </a>
+                  </Link>
+                </li>
+              )}
+              {!user && (
+                <li className="nav-item mx-4" key={"/register"}>
+                  <Link href={"/auth/register"}>
+                    <a className="flex flex-row items-center gap-2">
+                      <UserAddOutlined />
+                      Register
+                    </a>
+                  </Link>
+                </li>
+              )}
             </ul>
             {user && (
-              <LogoutOutlined
-                onClick={logout}
-                className="font-bold text-xl cursor-pointer pl-4"
-              />
+              <div className="flex flex-row items-center gap-2">
+                <LogoutOutlined
+                  onClick={logout}
+                  className="font-bold text-xl cursor-pointer pl-4"
+                />
+                Logout
+              </div>
             )}
           </div>
         </div>
       </nav>
-
-      {user ? (
-        <div className="flex flex-row-reverse items-center text-right gap-4">
-          <div className="flex">
-            <Fortune src={Coin} amount={user.coins} />
-            <Fortune src={Point} amount={user.points} />
-            <Fortune src={Win} amount={user.wins} />
-          </div>
-          <Link href={"/profile"}>
-            <a>
-              <Avatar
-                src={user.avatar}
-                className="cursor-pointer -mt-6"
-                shape={user && user.role === "admin" ? "square" : "circle"}
-              />
-            </a>
-          </Link>
-        </div>
-      ) : null}
     </div>
   );
 }

@@ -144,7 +144,7 @@ export default function Auth() {
         direction="vertical"
         className="bg-white p-12 text-center"
       >
-        <Text>Exhibia Online Auctions</Text>
+        <span className="text-2xl">byebyeGROCERY</span>
         <img src={Logo} className="ml-auto mr-auto w-64 h-auto" />
 
         {error && (

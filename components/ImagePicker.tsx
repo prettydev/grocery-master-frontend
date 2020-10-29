@@ -43,7 +43,7 @@ export default function ImagePicker({ image, upload }) {
             <p className="ant-upload-drag-icon">
               <CameraOutlined />
             </p>
-            <p className="ant-upload-text">Add product image</p>
+            <p className="ant-upload-text">Add Logo Image</p>
           </>
         )}
       </Upload.Dragger>

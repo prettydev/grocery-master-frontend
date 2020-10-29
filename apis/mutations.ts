@@ -352,9 +352,9 @@ export const ADMIN_MOVE2AUCTION_MUTATION = gql`
   }
 `;
 
-export const PRODUCT_ADD_MUTATION = gql`
-  mutation AddProduct($product: ProductInput!) {
-    admin_add_product(product: $product)
+export const GROCERY_ADD_MUTATION = gql`
+  mutation AddGrocery($grocery: GroceryInput!) {
+    add_grocery(grocery: $grocery)
   }
 `;
 

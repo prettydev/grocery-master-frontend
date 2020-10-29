@@ -306,15 +306,6 @@ export default function Profile() {
                 block
                 type="primary"
                 onClick={() => {
-                  router.push("/profile/badges");
-                }}
-              >
-                MY BADGES
-              </Button>
-              <Button
-                block
-                type="primary"
-                onClick={() => {
                   router.push("/profile/notes");
                 }}
               >

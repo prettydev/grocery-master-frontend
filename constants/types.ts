@@ -22,6 +22,7 @@ export interface IImage {
 export interface ILink {
   link: string;
 }
+
 export interface IProduct {
   id: string;
   title: string;
@@ -36,6 +37,46 @@ export interface IProduct {
   buybox_winner: IBuybox_winner;
   images: [IImage];
   active: boolean;
+}
+
+export interface II18N {
+  lang: string;
+  value: string;
+}
+
+export interface ILocation {
+  address: string;
+  lng: number;
+  lat: number;
+}
+
+export interface ICreditCard {
+  card_number: string;
+  expired_date: string;  
+  cvv: string;
+}
+
+export interface IGrocery {
+  id: string;  
+  name: string;  
+  second_lang: string;
+  mobile: string;
+  owner_email: string;
+  bank_account: string;
+  contact_email: string;
+  contact_phone: string;
+  opening_hours: number;
+  delivery_radius: string;
+  min_order: number;
+  first_offer_discount: number;
+  is_collect: boolean; 
+  logo: ILink;
+  images: [IImage];  
+  location: ILocation;
+  credit_card: ICreditCard;
+  description: [II18N];
+  delivery_policy: [II18N];
+  about_us: [II18N];
 }
 
 export interface ISimpleProduct {

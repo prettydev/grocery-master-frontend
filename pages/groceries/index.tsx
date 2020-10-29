@@ -28,14 +28,13 @@ import {
   SET_ACTIVE_MUTATION,
 } from "../../apis/mutations";
 import Category from "../../layouts/Category";
-import ProductDetailsModal from "../../modals/ProductDetailsModal";
-import ProductSingleAddModal from "../../modals/ProductSingleAddModal";
-import ProductBulkAddModal from "../../modals/ProductBulkAddModal";
+import ProductDetailsModal from "../../modals/GroceryDetailsModal";
+import ProductSingleAddModal from "../../modals/GroceryAddModal";
 import { IProduct } from "../../constants/types";
 
 const { Title } = Typography;
 
-export default function ProductList() {
+const Groceries = () => {
   const {
     mapState: { user, productPageInfo: pageInfo },
     setMapState,
@@ -139,7 +138,7 @@ export default function ProductList() {
 
   return (
     <MainLayout>
-      <Title>Products</Title>
+      <Title>Groceries</Title>
 
       <div className="w-full flex flex-row justify-between gap-24">
         <div className="w-full">
@@ -156,25 +155,11 @@ export default function ProductList() {
             onClick={() => setSingleAddVisible(true)}
             icon={<PlusOutlined />}
           >
-            Add Product
-          </Button>
-          <Button
-            type="primary"
-            onClick={() => setBulkAddVisible(true)}
-            icon={<FileOutlined />}
-          >
-            Import Json
+            Add Grocery
           </Button>
         </div>
       </div>
       <Row>
-        {/* <Col md={6}>
-          <Category
-            filter={filter}
-            setFilter={setFilter}
-            clearFilter={clearFilter}
-          />
-        </Col> */}
         <Col md={24}>
           {error && (
             <Alert message={error.message} type="error" showIcon closable />
@@ -219,11 +204,6 @@ export default function ProductList() {
                     <td className="border px-4 py-2">
                       <div className="flex flex-col gap-2">
                         <Button
-                          // loading={
-                          //   product && p.asin === product.asin
-                          //     ? moveLoading
-                          //     : false
-                          // }
                           onClick={() => {
                             move2exhibit(p.asin);
                           }}
@@ -232,11 +212,6 @@ export default function ProductList() {
                           move to exhibit
                         </Button>
                         <Button
-                          // loading={
-                          //   product && p.asin === product.asin
-                          //     ? moveLoading
-                          //     : false
-                          // }
                           onClick={() => {
                             move2auction(p.asin);
                           }}
@@ -294,16 +269,8 @@ export default function ProductList() {
         }}
         onCancel={() => setSingleAddVisible(false)}
       />
-      <ProductBulkAddModal
-        visible={bulkAddVisible}
-        onOk={() => {
-          setBulkAddVisible(false);
-          refreshAction({
-            variables: { pageArgs, filter },
-          });
-        }}
-        onCancel={() => setBulkAddVisible(false)}
-      />
     </MainLayout>
   );
-}
+};
+
+export default Groceries;

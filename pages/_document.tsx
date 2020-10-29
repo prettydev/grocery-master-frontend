@@ -3,8 +3,8 @@ import Document, { Html, Head, Main, NextScript } from "next/document";
 import fs from "fs";
 import path from "path";
 
-const APP_NAME = "Exhibia";
-const APP_DESCRIPTION = "This is an online auction platform";
+const APP_NAME = "byebyeGROCERY";
+const APP_DESCRIPTION = "";
 
 export default class MyDocument extends Document<any> {
   static async getServerSideProps(ctx) {

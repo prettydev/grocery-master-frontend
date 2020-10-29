@@ -13,7 +13,6 @@ import "antd/dist/antd.css";
 import "../style/custom-antd.css";
 import "../style/index.css";
 import "../style/animations.css";
-import "../style/stream-chat.css"; //for exhibia chat box
 import "react-image-gallery/styles/css/image-gallery.css";
 
 // since "apollo" isn't a native Next.js prop we have to declare it's type.
@@ -30,7 +29,7 @@ class MyApp extends App<IProps> {
     return (
       <>
         <Head>
-          <title>Exhibia</title>
+          <title>byebyeGROCERY</title>
           <meta
             name="viewport"
             content="minimum-scale=1, initial-scale=1, width=device-width, shrink-to-fit=no, viewport-fit=cover"

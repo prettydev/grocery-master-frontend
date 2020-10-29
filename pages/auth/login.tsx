@@ -43,6 +43,7 @@ const Login = () => {
         user: data.login.user,
       });
       new SecureLS().set("user", data.login.user);
+      router.push("/groceries");
     } else if (data && data.login && !data.login.user) {
       message.error("Failed to login!");
     }

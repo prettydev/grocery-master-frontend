@@ -22,8 +22,6 @@ import { MESSAGES_QUERY, WISHES_QUERY } from "../apis/queries";
 
 import { notification } from "antd";
 
-const Tenor = require("../images/tenor.gif");
-
 const MySwal = withReactContent(Swal);
 
 const openGameNotification = (description) => {
@@ -37,7 +35,7 @@ const openGameNotification = (description) => {
 
 const openGeneralNotification = (description) => {
   notification.info({
-    message: `Exhibia News`,
+    message: `byebyeGROCERY News`,
     description,
     placement: `bottomLeft`,
     duration: 5,
@@ -45,34 +43,6 @@ const openGeneralNotification = (description) => {
     style: {
       width: 500,
     },
-  });
-};
-
-const openPrivateNotification = (description) => {
-  let timerInterval;
-  MySwal.fire({
-    title: "",
-    html: (
-      <div>
-        <img src={Tenor}></img>
-        <h1>{description}</h1>
-      </div>
-    ),
-    showClass: {
-      popup: "animate__animated animate__fadeInDown",
-    },
-    hideClass: {
-      popup: "animate__animated animate__fadeOutUp",
-    },
-    timer: 3000,
-    timerProgressBar: false,
-    onClose: () => {
-      clearInterval(timerInterval);
-    },
-  }).then((result) => {
-    if (result.dismiss === Swal.DismissReason.timer) {
-      console.log("I was closed by the timer");
-    }
   });
 };
 
@@ -436,7 +406,6 @@ export const MapProvider = ({ children }) => {
       return;
     }
 
-    // openPrivateNotification(privateNoteData.privateNoteUpdated.content);
     openGeneralNotification(privateNoteData.privateNoteUpdated.content);
   }, [privateNoteData]);
 
