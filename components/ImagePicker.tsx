@@ -16,9 +16,8 @@ export default function ImagePicker({ image, upload }) {
     }
     console.log(newFile);
 
-    setFile(newFile.response.url);
-    upload(newFile.response.url);
-    // form.setFieldsValue(avatar:newFile.response.url);
+    setFile(newFile.response.secure_url);
+    upload(newFile.response.secure_url);
   };
 
   useEffect(() => {

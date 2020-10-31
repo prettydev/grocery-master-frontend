@@ -40,7 +40,7 @@ export default function grocerySingleAddModal(props) {
 
   const setLogo = (url) => {
     form.setFieldsValue({
-      logo: url.replace("http://", "https://"),
+      logo: url,
     });
   };
 
@@ -140,7 +140,7 @@ export default function grocerySingleAddModal(props) {
 
     setImages((images) => [
       ...images,
-      { link: file.response.url, variant: "" },
+      { link: file.response.secure_url, variant: "" },
     ]);
   };
 

@@ -245,7 +245,7 @@ export default function Profile() {
                   const res = await changeAvatar({
                     variables: {
                       user_id: user.id,
-                      avatar: url.replace("http://", "https://"),
+                      avatar: url,
                     },
                   });
 

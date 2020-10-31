@@ -1,19 +1,10 @@
-import React, { useState, useEffect, useRef } from "react";
-import {
-  Alert,
-  Form,
-  Input,
-  Button,
-  message,
-  Select,
-  Space,
-  Upload,
-} from "antd";
+import React, { useState, useEffect } from "react";
+import { Alert, Form, Input, Button, message, Space } from "antd";
 import { useRouter } from "next/router";
 import { useMutation } from "@apollo/client";
 
 import Uploader from "../../components/Uploader";
-import { UPLOAD_FILE, ADD_USER } from "../../apis/mutations";
+import { ADD_USER } from "../../apis/mutations";
 
 const layout = {
   labelCol: { span: 8 },
@@ -23,13 +14,10 @@ const tailLayout = {
   wrapperCol: { offset: 8, span: 16 },
 };
 
-const { Option } = Select;
-
 const Register = () => {
   const router = useRouter();
 
   const [form] = Form.useForm();
-  const [phone, setPhone] = useState("");
   const [ref, setRef] = useState("");
 
   const [addUser, { loading, error }] = useMutation(ADD_USER);
@@ -39,7 +27,7 @@ const Register = () => {
 
     console.log("registering values are ", values);
 
-    const res = await addUser({ variables: { user: values, ref } }); //await axios.post(`${process.env.API_URL}users/register`, {...values});
+    const res = await addUser({ variables: { user: values, ref } });
     console.log(res.data);
     if (res.data.register) {
       message.success("Registration Success!");
@@ -75,7 +63,7 @@ const Register = () => {
             <Uploader
               upload={(url) => {
                 form.setFieldsValue({
-                  avatar: url.replace("http://", "https://"),
+                  avatar: url,
                 });
               }}
             />
@@ -84,18 +72,6 @@ const Register = () => {
           <Form.Item label="Username" name="username">
             <Input />
           </Form.Item>
-
-          {/*<Form.Item label="Phone" name="phone">
-            <PhoneInput
-              country={"us"}
-              value={phone}
-              onChange={(phone) => {
-                setPhone(phone);
-                // form.setFieldsValue({ phone });
-              }}
-              inputStyle={{ width: "100%" }}
-            />
-          </Form.Item> */}
 
           <Form.Item
             label="Email"

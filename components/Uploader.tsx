@@ -15,8 +15,7 @@ export default function Uploader(props) {
     if (!newFile.response) return;
     console.log(newFile);
 
-    props.upload(newFile.response.url);
-    // form.setFieldsValue(avatar:newFile.response.url);
+    props.upload(newFile.response.secure_url);
   };
 
   const onPreview = async (file) => {
