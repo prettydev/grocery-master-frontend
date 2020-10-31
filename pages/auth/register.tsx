@@ -56,21 +56,17 @@ const Register = () => {
         )}
         <Form {...layout} form={form} name="control-hooks" onFinish={onFinish}>
           <Form.Item
-            label="Avatar"
-            name="avatar"
-            rules={[{ required: true, message: "Please select your avatar!" }]}
+            label="Image"
+            name="image"
+            rules={[{ required: true, message: "Please select your image!" }]}
           >
             <Uploader
               upload={(url) => {
                 form.setFieldsValue({
-                  avatar: url,
+                  image: url,
                 });
               }}
             />
-          </Form.Item>
-
-          <Form.Item label="Username" name="username">
-            <Input />
           </Form.Item>
 
           <Form.Item

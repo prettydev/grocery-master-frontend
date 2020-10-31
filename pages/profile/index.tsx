@@ -57,9 +57,7 @@ export default function Profile() {
   const [facebookLoading, setFacebookLoading] = useState(false);
   const [googleLoading, setGoogleLoading] = useState(false);
 
-  const [bonus, setBonus] = useState(0);
   const [email, setEmail] = useState("");
-  const [phone, setPhone] = useState("");
   const [otp, setOtp] = useState("");
 
   const [phoneVisible, setPhoneVisible] = useState(true);
@@ -69,7 +67,7 @@ export default function Profile() {
       uid: "-1",
       name: "image.png",
       status: "done",
-      url: user ? user.avatar : "",
+      url: user ? user.image : "",
     },
   ]);
 
@@ -101,7 +99,6 @@ export default function Profile() {
 
     setFacebookLoading(false);
     setGoogleLoading(false);
-    console.log("addSocial result...", res.data);
 
     if (res.data.addSocial) {
       message.success("Success to add social!");
@@ -136,50 +133,6 @@ export default function Profile() {
     }
   };
 
-  const sendSMSProc = async () => {
-    if (!phone) {
-      message.error("Input phone number!");
-      return;
-    }
-    const res = await sendSMS({
-      variables: {
-        user_id: user.id,
-        phone,
-      },
-    });
-    try {
-      if (res.data.sendSMS.code === "success") {
-        message.info("Sent the verification code to your phone number!");
-      } else {
-        message.error(res.data.sendSMS.message);
-      }
-    } catch (e) {
-      console.log(e);
-    }
-  };
-
-  const verifyCode = async () => {
-    if (!phone) {
-      message.error("Input verification code!");
-      return;
-    }
-    const res = await verifySMS({
-      variables: {
-        user_id: user.id,
-        token: otp,
-      },
-    });
-    try {
-      if (res.data.verifySMS.code === "success") {
-        message.info("Success to verify the code!");
-      } else {
-        message.error(res.data.verifySMS.message);
-      }
-    } catch (e) {
-      console.log(e);
-    }
-  };
-
   useEffect(() => {
     if (!session) {
       return;
@@ -207,20 +160,10 @@ export default function Profile() {
   }, [session]);
 
   useEffect(() => {
-    if (!user || (user && phone === user.phone)) {
-      return;
-    }
-    setPhoneVisible(true);
-  }, [phone]);
-
-  useEffect(() => {
     if (user) {
       setEmail(user.email);
-      setPhone(user.phone);
-      setPhoneVisible(!user.phone_verified);
 
       const verified_ratio =
-        (user.phone_verified ? 25 : 0) +
         (user.email_verified ? 25 : 0) +
         (user.google && user.google.email ? 25 : 0) +
         (user.facebook && user.facebook.email ? 25 : 0);
@@ -259,7 +202,7 @@ export default function Profile() {
                 }}
               />
 
-              <Title level={3}>{user.username}</Title>
+              <Title level={3}>{user.name}</Title>
               <Text strong>{user.plan}</Text>
               <Text>
                 member since {new Date(user.created_at).toLocaleDateString()}
@@ -329,49 +272,6 @@ export default function Profile() {
                     {user && user.email_verified && (
                       <Title level={4}>Associated with Email</Title>
                     )}
-                    <Input
-                      size="large"
-                      placeholder="Phone Number"
-                      value={phone}
-                      prefix={<PhoneOutlined />}
-                      onChange={(e) => {
-                        setPhone(e.target.value);
-                      }}
-                    />
-                    {user && phoneVisible && (
-                      <Button
-                        icon={<PhoneOutlined />}
-                        block
-                        style={{ background: "#6aa84f", color: "white" }}
-                        onClick={() => sendSMSProc()}
-                        loading={smsLoading}
-                      >
-                        Send SMS
-                      </Button>
-                    )}
-                    <Input
-                      size="large"
-                      placeholder="Phone Vericiation code"
-                      value={otp}
-                      prefix={<PhoneOutlined />}
-                      onChange={(e) => {
-                        setOtp(e.target.value);
-                      }}
-                    />
-                    {user && phoneVisible && (
-                      <Button
-                        icon={<PhoneOutlined />}
-                        block
-                        style={{ background: "#6aa84f", color: "white" }}
-                        onClick={() => verifyCode()}
-                        loading={otpLoading}
-                      >
-                        Verify Phone
-                      </Button>
-                    )}
-                    {user && user.phone_verified && (
-                      <Title level={4}>Associated with Phone</Title>
-                    )}
                   </Space>
                   <div className="flex flex-row gap-16 items-center justify-center w-full">
                     <div className="flex flex-col">
@@ -397,16 +297,6 @@ export default function Profile() {
                       {!user.email_verified && (
                         <span className="text-lg text-gray-600">
                           ✗ Email Unverified
-                        </span>
-                      )}
-                      {user.phone_verified && (
-                        <span className="text-lg text-green-600">
-                          ✓ Phone Verified
-                        </span>
-                      )}
-                      {!user.phone_verified && (
-                        <span className="text-lg text-gray-600">
-                          ✗ Phone Unverified
                         </span>
                       )}
                       {user.google && user.google.email && (

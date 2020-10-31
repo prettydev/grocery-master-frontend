@@ -4,9 +4,9 @@
  */
 import React, { useState, useEffect } from "react";
 import { useRouter } from "next/router";
-import { useQuery, useMutation } from "@apollo/client";
+import { useQuery } from "@apollo/client";
 
-import { Col, Row, Space, Typography, Card } from "antd";
+import { Card } from "antd";
 
 import {
   FacebookOutlined,
@@ -15,21 +15,16 @@ import {
   CalendarOutlined,
 } from "@ant-design/icons";
 
-import { useMapState } from "../../context/store";
 import MainLayout from "../../layouts/MainLayout";
 import { USER_QUERY } from "../../apis/queries";
 import { IUser } from "../../constants/types";
-
-const Win = require("../../images/win.png");
-const Coin = require("../../images/coin.png");
-const Point = require("../../images/point.png");
 
 export default function Profile() {
   const [profile, setProfile] = useState<IUser>();
 
   const router = useRouter();
 
-  const { loading, error, data } = useQuery(USER_QUERY, {
+  const { data } = useQuery(USER_QUERY, {
     variables: { id: router.query.id },
   });
 
@@ -56,23 +51,17 @@ export default function Profile() {
               <Card hoverable>
                 <img
                   className="w-32 h-32 object-cover object-center rounded-full ml-auto mr-auto"
-                  src={profile.avatar}
+                  src={profile.image}
                   alt="avatar"
                 />
                 <div className="py-4 px-6">
                   <h1 className="text-2xl font-semibold text-gray-800 text-center">
-                    {profile.username ? profile.username : profile.email}
+                    {profile.name ? profile.name : profile.email}
                   </h1>
                   <div className="flex items-center mt-4 text-gray-700">
-                    <img src={Win} className="w-6 h-6" />
-                    <h1 className="px-2 text-sm">{profile.wins} Wins</h1>
-                  </div>
-                  <div className="flex items-center mt-4 text-gray-700">
-                    <img src={Coin} className="w-6 h-6" />
                     <h1 className="px-2 text-sm">{profile.coins} Coins</h1>
                   </div>
                   <div className="flex items-center mt-4 text-gray-700">
-                    <img src={Point} className="w-6 h-6" />
                     <h1 className="px-2 text-sm">{profile.points} Points</h1>
                   </div>
                   <div className="flex items-center mt-4 text-gray-700">

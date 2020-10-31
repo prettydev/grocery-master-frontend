@@ -2,7 +2,7 @@ import React, { createContext, useReducer, useContext, useEffect } from "react";
 import { useRouter } from "next/router";
 import { useSubscription } from "@apollo/client";
 
-import { IUser, IContact } from "../constants/types";
+import { IUser } from "../constants/types";
 import {
   USER_SUBSCRIPTION,
   NOTE_SUBSCRIPTION,
@@ -33,7 +33,6 @@ type MapState = {
   auctionRefresh: boolean;
   user: IUser | null;
   groceryPageInfo: PageInfo;
-  contacts: IContact[];
 };
 
 type MapActions =
@@ -48,10 +47,6 @@ type MapActions =
   | {
       type: "setGroceryPageInfo";
       pageInfo: PageInfo;
-    }
-  | {
-      type: "setContacts";
-      contacts: IContact[];
     };
 
 const initialState: MapState = {
@@ -61,7 +56,6 @@ const initialState: MapState = {
     currentPage: 1,
     pageSize: 10,
   },
-  contacts: [],
 };
 
 const initialMapContext: {
@@ -82,8 +76,6 @@ const reducer = (state: MapState, action: MapActions) => {
       return { ...state, user: action.user };
     case "setGroceryPageInfo":
       return { ...state, groceryPageInfo: action.pageInfo };
-    case "setContacts":
-      return { ...state, contacts: action.contacts };
     default:
       return state;
   }

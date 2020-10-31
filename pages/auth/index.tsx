@@ -187,7 +187,8 @@ export default function Auth() {
         />
         <GoogleButton text="Continue With Google" loading={googleLoading} />
         <Text>
-          By continue you agree with Exhibia's Terms of service, privacy policy
+          By continue you agree with byebyeGROCERY's Terms of service, privacy
+          policy
         </Text>
       </Space>
     </div>

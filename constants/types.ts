@@ -61,6 +61,27 @@ export interface IReview {
   location: string;
 }
 
+export interface IAddress {
+  id: string;
+  type: string;
+  name: string;
+  info: string;
+}
+
+export interface IContact {
+  id: string;
+  type: string;
+  number: string;
+}
+
+export interface ICard {
+  id: string;
+  type: string;
+  cardType: string;
+  name: string;
+  lastFourDigit: string;
+}
+
 export interface ISocial {
   name: string;
   email: string;
@@ -80,24 +101,23 @@ export interface IMessage {
 
 export interface IUser {
   id: string;
-  username: string;
+  name: string;
   email: string;
-  avatar: string;
-  phone: string;
+  image: string;
   plan: string;
-  role: string;  
+  role: string;    
   email_verified: boolean;
-  phone_verified: boolean;  
+  coins: number;
+  points: number;
   facebook: ISocial;
   google: ISocial;  
+  address?: IAddress;
+  contact?: IContact;
+  card?: ICard;
+  total_order?: number;
+  total_order_amount?: number;
   created_at: Date;
   updated_at: Date;
-}
-
-export interface INewUser {
-  username: string;
-  email: string;
-  password: string;
 }
 
 export interface ResetSocket {
@@ -165,14 +185,6 @@ export interface IFriend {
   sender: IUser;
   receiver: IUser;
   state: 0 | 1;
-}
-
-export interface IContact {
-  key: number;
-  title: string;
-  email: string;
-  phoneNumber: string;
-  ref: string;
 }
 
 export interface INote {

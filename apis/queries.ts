@@ -5,14 +5,12 @@ export const LOGIN_QUERY = gql`
     login(user: $user) {
       user {
         id
-        username
+        name
         email
-        avatar
-        phone
+        image        
         plan
         role
-        email_verified
-        phone_verified
+        email_verified        
         facebook {
           name
           email
@@ -21,8 +19,28 @@ export const LOGIN_QUERY = gql`
         google {
           name
           email
-          image
-        }        
+          image        
+        }      
+        address {
+          id
+          type
+          name
+          info
+        }
+        contact {
+          id
+          type
+          number
+        }
+        card {
+          id
+          type
+          cardType
+          name
+          lastFourDigit
+        }
+        total_order
+        total_order_amount
         created_at
       }
       message
@@ -34,14 +52,12 @@ export const USER_QUERY = gql`
   query Login($id: String!) {
     user(id: $id) {
       id
-      username
+      name
       email
-      avatar
-      phone
+      image
       plan
       role
       email_verified
-      phone_verified
       facebook {
         name
         email
@@ -52,6 +68,26 @@ export const USER_QUERY = gql`
         email
         image
       }      
+      address {
+        id
+        type
+        name
+        info
+      }
+      contact {
+        id
+        type
+        number
+      }
+      card {
+        id
+        type
+        cardType
+        name
+        lastFourDigit
+      }
+      total_order
+      total_order_amount
       created_at
     }
   }

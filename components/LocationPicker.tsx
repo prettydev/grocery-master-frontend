@@ -9,8 +9,6 @@ import { Input, List } from "antd";
 let cachedVal = "";
 const acceptedKeys = [38, 40, 13, 27];
 
-type Suggestion = google.maps.places.AutocompletePrediction;
-
 const LocationPicker = ({ location, onChange }) => {
   const [currIndex, setCurrIndex] = useState<number | null>(null);
 

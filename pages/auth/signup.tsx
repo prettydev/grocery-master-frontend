@@ -38,7 +38,8 @@ const Index = () => {
         </Button>
       </p>
       <h3 style={{ textAlign: "center" }}>
-        By continue you agreee with Exhibia's Terms of sevice, Privacy Policy
+        By continue you agreee with byebyeGROCERY's Terms of sevice, Privacy
+        Policy
       </h3>
     </MainLayout>
   );

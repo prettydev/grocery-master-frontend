@@ -4,14 +4,12 @@ export const USER_SUBSCRIPTION = gql`
   subscription UserUpdated($user_id: String!) {
     userUpdated(user_id: $user_id) {
       id
-      username
+      name
       email
-      avatar
-      phone
+      image
       plan
       role
       email_verified
-      phone_verified
       facebook {
         name
         email
@@ -22,6 +20,26 @@ export const USER_SUBSCRIPTION = gql`
         email
         image
       }      
+      address {
+        id
+        type
+        name
+        info
+      }
+      contact {
+        id
+        type
+        number
+      }
+      card {
+        id
+        type
+        cardType
+        name
+        lastFourDigit
+      }
+      total_order
+      total_order_amount
       created_at
     }
   }
@@ -54,66 +72,6 @@ export const MESSAGE_SUBSCRIPTION = gql`
       avatar
       content
       created_at
-    }
-  }
-`;
-
-export const CURRENT_AUCTION_SUBSCRIPTION = gql`
-  subscription AuctionUpdated($auction_id: String!) {
-    auctionUpdated(auction_id: $auction_id) {
-      auction {      
-        id
-        product {
-          title
-          asin
-          link
-          image
-          price
-          category
-        }
-        funders {
-          user {
-            id
-            email
-            username
-            avatar
-            coins
-          }
-          amount
-        }
-        bidders {
-          user {
-            id
-            email
-            username
-            avatar
-            coins
-          }
-          value
-        }
-        autos {
-          user {
-            id
-            email
-            username
-            avatar
-            coins
-          }
-          value
-          active
-        }
-        watchers
-        chatters
-        timer
-        live_timer
-        reserved
-        bid_speed
-        fund_amount
-        fund_percent
-        state
-        manual
-      } 
-      timestamp
     }
   }
 `;

@@ -48,14 +48,12 @@ export const SOCIAL_REGISTER_LOGIN_MUTATION = gql`
     socialRegisterLogin(social: $social) {
       user {
         id
-        username
+        name
         email
         avatar
-        phone
         plan
         role
         email_verified
-        phone_verified
         facebook {
           name
           email
@@ -66,6 +64,26 @@ export const SOCIAL_REGISTER_LOGIN_MUTATION = gql`
           email
           image
         }        
+        address {
+          id
+          type
+          name
+          info
+        }
+        contact {
+          id
+          type
+          number
+        }
+        card {
+          id
+          type
+          cardType
+          name
+          lastFourDigit
+        }
+        total_order
+        total_order_amount
         created_at
       }
       message
@@ -204,9 +222,9 @@ export const ORDER_MUTATION = gql`
         id
         user {
           id
-          username
+          name
           email
-          avatar
+          image
         }
         product {
           asin
@@ -216,10 +234,9 @@ export const ORDER_MUTATION = gql`
       }
       user {
         id
-        username
+        name
         email
-        avatar
-        wins
+        image
         coins
         points
       }
