@@ -3,8 +3,8 @@ import { useRouter } from "next/router";
 import { Layout } from "antd";
 
 import NavBar from "./NavBar";
-import FooterBar from "./FooterBar";
 import { useMapState } from "../context/store";
+import FooterBar from "../containers/FooterBar";
 
 const SecureLS = require("secure-ls");
 

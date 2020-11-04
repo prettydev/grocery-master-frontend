@@ -4,7 +4,7 @@ import TopGroceries from "../../containers/TopGroceries";
 import Pricing from "../../containers/Pricing";
 import AboutUs from "../../containers/AboutUs";
 import Impress from "../../containers/Impress";
-import Footer from "../../containers/Footer";
+import Footer from "../../containers/FooterBar";
 
 import ScrollSpyMenu from "../../components/ScrollSpyMenu";
 
@@ -13,7 +13,7 @@ import menuSharp from "@iconify/icons-ion/menu-sharp";
 import closeIcon from "@iconify/icons-ion/close";
 import { BackTop } from "antd";
 import { FaArrowAltCircleUp } from "react-icons/fa";
-import FooterBar from "../../layouts/FooterBar";
+import FooterBar from "../../containers/FooterBar";
 
 const menuData = [
   {
@@ -59,8 +59,7 @@ const Home = () => {
         <AboutUs key="about" />
         <Pricing key="plan" />
         <Impress key="impress" />
-        <Footer key="footer" />
-        <FooterBar />
+        <FooterBar key="footer" />
       </div>
       <BackTop>
         <FaArrowAltCircleUp size={56} className="text-red-500" />

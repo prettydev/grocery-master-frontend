@@ -1,10 +1,20 @@
 import React from "react";
+import Link from "next/link";
 import { FaPhone } from "react-icons/fa";
 import { AiOutlineMail } from "react-icons/ai";
 import Logo from "../../components/Logo";
-import FooterBar from "../../layouts/FooterBar";
+import { Col, Layout, Row, Space, Typography } from "antd";
+import {
+  FacebookFilled,
+  TwitterSquareFilled,
+  InstagramFilled,
+  YoutubeOutlined,
+} from "@ant-design/icons";
 
-const Footer = () => {
+const { Footer } = Layout;
+const { Text } = Typography;
+
+const FooterBar = () => {
   return (
     <div id="footer" className="flex flex-col-reverse sm:flex-row bg-gray-100">
       <div className="flex flex-col w-4/5 justify-center mx-auto">
@@ -46,9 +56,38 @@ const Footer = () => {
             </div>
           </div>
         </div>
+
+        <div className="flex flex-row justify-around mb-12 w-full">
+          <div>
+            <Text>
+              <Space size="large">
+                <Link href={"/about"}>
+                  <a target="_blank">Licenses</a>
+                </Link>
+                <span>@Copyright powered by byebyeGROCERY</span>
+              </Space>
+            </Text>
+          </div>
+          <div>
+            <Space size="large">
+              <a href={"https://twitter.com/"} target="_new">
+                <TwitterSquareFilled style={{ fontSize: 22 }} />
+              </a>
+              <a href={"https://www.facebook.com/"} target="_new">
+                <FacebookFilled style={{ fontSize: 22 }} />
+              </a>
+              <a href={"https://www.instagram.com/"} target="_new">
+                <InstagramFilled style={{ fontSize: 22 }} />
+              </a>
+              <a href={"https://www.youtube.com/"} target="_new">
+                <YoutubeOutlined style={{ fontSize: 22 }} />
+              </a>
+            </Space>
+          </div>
+        </div>
       </div>
     </div>
   );
 };
 
-export default Footer;
+export default FooterBar;
