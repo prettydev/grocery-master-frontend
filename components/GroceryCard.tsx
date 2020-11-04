@@ -5,7 +5,7 @@ const GroceryCard = ({ grocery }: { grocery: IGrocery }) => {
   return grocery ? (
     <div className="max-w-sm rounded overflow-hidden shadow-xl">
       <img
-        className="w-full"
+        className="h-48 w-72 object-cover"
         src={grocery.logo.link}
         alt="Sunset in the mountains"
       />

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useRouter } from "next/router";
 import { useQuery, useMutation, useSubscription } from "@apollo/client";
 import {
@@ -19,6 +19,7 @@ import ImagePicker from "../components/ImagePicker";
 import { GROCERY_ADD_MUTATION } from "../apis/mutations";
 import useScript from "../hooks/useScript";
 import CreditCardInput from "../components/CreditCardInput";
+import { useMapState } from "../context/store";
 
 const { Option } = Select;
 
@@ -33,6 +34,11 @@ export default function grocerySingleAddModal(props) {
   );
 
   const router = useRouter();
+
+  const {
+    mapState: { user },
+    setMapState,
+  } = useMapState();
 
   const [form] = Form.useForm();
 
@@ -54,6 +60,7 @@ export default function grocerySingleAddModal(props) {
 
     const grocery = {
       name: values.name,
+      domain: values.domain,
       second_lang: values.second_lang,
       opening_hours: values.opening_hours,
       logo: {
@@ -72,7 +79,7 @@ export default function grocerySingleAddModal(props) {
       ],
       location: values.location,
       mobile: values.mobile,
-      owner_email: values.owner_email,
+      owner_email: user.email,
       credit_card: values.credit_card,
       delivery_policy: [
         {
@@ -166,6 +173,15 @@ export default function grocerySingleAddModal(props) {
     setShowSecond(v !== "none");
   };
 
+  useEffect(() => {
+    if (!user) {
+      return;
+    }
+    form.setFieldsValue({
+      owner_email: user.email,
+    });
+  }, [user]);
+
   return (
     <Modal
       title="Add Grocery"
@@ -189,6 +205,14 @@ export default function grocerySingleAddModal(props) {
           label="Name"
           name="name"
           rules={[{ required: true, message: "Please type a grocery name!" }]}
+        >
+          <Input />
+        </Form.Item>
+
+        <Form.Item
+          label="Domain"
+          name="domain"
+          rules={[{ required: true, message: "Please type a grocery domain!" }]}
         >
           <Input />
         </Form.Item>
@@ -261,7 +285,7 @@ export default function grocerySingleAddModal(props) {
             },
           ]}
         >
-          <Input />
+          <Input readOnly />
         </Form.Item>
 
         <Form.Item label="Bank Account" name="bank_account">

@@ -27,6 +27,7 @@ export interface ICreditCard {
 export interface IGrocery {
   id: string;  
   name: string;  
+  domain: string;
   second_lang: string;
   mobile: string;
   owner_email: string;

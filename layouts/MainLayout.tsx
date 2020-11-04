@@ -20,7 +20,12 @@ const MainLayout = ({ children }: { children: ReactNode }) => {
 
   useEffect(() => {
     if (!user) {
-      router.push("/auth/login");
+      if (
+        router.pathname !== "/auth/login" &&
+        router.pathname !== "/auth/register"
+      ) {
+        router.push("/auth/login");
+      }
     }
   }, [user]);
 

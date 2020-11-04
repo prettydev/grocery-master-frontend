@@ -5,6 +5,7 @@ import { useMutation } from "@apollo/client";
 
 import Uploader from "../../components/Uploader";
 import { ADD_USER } from "../../apis/mutations";
+import MainLayout from "../../layouts/MainLayout";
 
 const layout = {
   labelCol: { span: 8 },
@@ -45,94 +46,97 @@ const Register = () => {
   }, [router]);
 
   return (
-    <div className="w-full h-screen bg-gray-200 flex justify-center items-center">
-      <Space
-        size="large"
-        direction="vertical"
-        className="w-1/3 bg-white p-12 text-center"
-      >
-        {error && (
-          <Alert message={error.message} type="error" showIcon closable />
-        )}
-        <Form {...layout} form={form} name="control-hooks" onFinish={onFinish}>
-          <Form.Item
-            label="Image"
-            name="image"
-            rules={[{ required: true, message: "Please select your image!" }]}
+    <MainLayout>
+      <div className="w-full flex justify-center">
+        <div className="w-1/3 mt-24">
+          {error && (
+            <Alert message={error.message} type="error" showIcon closable />
+          )}
+          <Form
+            {...layout}
+            form={form}
+            name="control-hooks"
+            onFinish={onFinish}
           >
-            <Uploader
-              upload={(url) => {
-                form.setFieldsValue({
-                  image: url,
-                });
-              }}
-            />
-          </Form.Item>
+            <Form.Item
+              label="Image"
+              name="image"
+              rules={[{ required: true, message: "Please select your image!" }]}
+            >
+              <Uploader
+                upload={(url) => {
+                  form.setFieldsValue({
+                    image: url,
+                  });
+                }}
+              />
+            </Form.Item>
 
-          <Form.Item
-            label="Email"
-            name="email"
-            rules={[
-              {
-                type: "email",
-                message: "The input is not valid E-mail!",
-              },
-              {
-                required: true,
-                message: "Please input your E-mail!",
-              },
-            ]}
-          >
-            <Input />
-          </Form.Item>
-
-          <Form.Item
-            name="password"
-            label="Password"
-            rules={[
-              {
-                required: true,
-                message: "Please input your password!",
-              },
-            ]}
-            hasFeedback
-          >
-            <Input.Password />
-          </Form.Item>
-
-          <Form.Item
-            name="confirm"
-            label="Confirm Password"
-            dependencies={["password"]}
-            hasFeedback
-            rules={[
-              {
-                required: true,
-                message: "Please confirm your password!",
-              },
-              ({ getFieldValue }) => ({
-                validator(rule, value) {
-                  if (!value || getFieldValue("password") === value) {
-                    return Promise.resolve();
-                  }
-                  return Promise.reject(
-                    "The two passwords that you entered do not match!"
-                  );
+            <Form.Item
+              label="Email"
+              name="email"
+              rules={[
+                {
+                  type: "email",
+                  message: "The input is not valid E-mail!",
                 },
-              }),
-            ]}
-          >
-            <Input.Password />
-          </Form.Item>
+                {
+                  required: true,
+                  message: "Please input your E-mail!",
+                },
+              ]}
+            >
+              <Input />
+            </Form.Item>
 
-          <Form.Item {...tailLayout}>
-            <Button type="primary" htmlType="submit" loading={loading}>
-              Submit
-            </Button>
-          </Form.Item>
-        </Form>
-      </Space>
-    </div>
+            <Form.Item
+              name="password"
+              label="Password"
+              rules={[
+                {
+                  required: true,
+                  message: "Please input your password!",
+                },
+              ]}
+              hasFeedback
+            >
+              <Input.Password />
+            </Form.Item>
+
+            <Form.Item
+              name="confirm"
+              label="Confirm Password"
+              dependencies={["password"]}
+              hasFeedback
+              rules={[
+                {
+                  required: true,
+                  message: "Please confirm your password!",
+                },
+                ({ getFieldValue }) => ({
+                  validator(rule, value) {
+                    if (!value || getFieldValue("password") === value) {
+                      return Promise.resolve();
+                    }
+                    return Promise.reject(
+                      "The two passwords that you entered do not match!"
+                    );
+                  },
+                }),
+              ]}
+            >
+              <Input.Password />
+            </Form.Item>
+
+            <Form.Item {...tailLayout}>
+              <Button type="primary" htmlType="submit" loading={loading}>
+                Submit
+              </Button>
+            </Form.Item>
+          </Form>
+        </div>
+      </div>
+    </MainLayout>
   );
 };
 

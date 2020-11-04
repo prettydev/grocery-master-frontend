@@ -98,6 +98,7 @@ export const GROCERIES_QUERY = gql`
     groceries(pageArgs: $pageArgs, filter: $filter) {
       arr {
         name
+        domain
         second_lang
         mobile
         owner_email
@@ -148,6 +149,7 @@ export const TOP_GROCERIES_QUERY = gql`
   query TopGroceries {
     top_groceries {      
         name
+        domain
         second_lang
         mobile
         owner_email

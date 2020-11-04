@@ -48,6 +48,7 @@ const Groceries = () => {
     key: "",
     sort: "latest",
     cat: "All",
+    email: "",
   };
 
   const [filter, setFilter] = useState(initialFilter);
@@ -90,10 +91,20 @@ const Groceries = () => {
   }, [data]);
 
   useEffect(() => {
+    if (!user) {
+      return;
+    }
     refreshGroceries({
       variables: { pageArgs, filter },
     });
   }, [pageInfo, filter]);
+
+  useEffect(() => {
+    if (!user) {
+      return;
+    }
+    setFilter({...filter, email: user.email});
+  },[user]);
 
   return (
     <MainLayout>
@@ -130,6 +141,7 @@ const Groceries = () => {
                 <th className="px-4 py-2">no</th>
                 <th className="px-4 py-2">logo</th>
                 <th className="px-4 py-2">name</th>
+                <th className="px-4 py-2">domain</th>
                 <th className="px-4 py-2">action</th>
               </tr>
             </thead>
@@ -156,6 +168,7 @@ const Groceries = () => {
                     >
                       {p.name}
                     </td>
+                    <td className="border px-4 py-2">{p.domain}</td>
                     <td className="border px-4 py-2"></td>
                   </tr>
                 ))}
