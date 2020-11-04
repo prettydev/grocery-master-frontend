@@ -2,14 +2,18 @@ import React, { useState } from "react";
 import { Transition } from "@tailwindui/react";
 import TopGroceries from "../../containers/TopGroceries";
 import Pricing from "../../containers/Pricing";
-import ContactUs from "../../containers/ContactUs";
 import AboutUs from "../../containers/AboutUs";
+import Impress from "../../containers/Impress";
+import Footer from "../../containers/Footer";
 
 import ScrollSpyMenu from "../../components/ScrollSpyMenu";
 
 import { Icon, InlineIcon } from "@iconify/react";
 import menuSharp from "@iconify/icons-ion/menu-sharp";
 import closeIcon from "@iconify/icons-ion/close";
+import { BackTop } from "antd";
+import { FaArrowAltCircleUp } from "react-icons/fa";
+import FooterBar from "../../layouts/FooterBar";
 
 const menuData = [
   {
@@ -54,8 +58,13 @@ const Home = () => {
         <TopGroceries key="top_groceries" />
         <AboutUs key="about" />
         <Pricing key="plan" />
-        <ContactUs key="contact" />
+        <Impress key="impress" />
+        <Footer key="footer" />
+        <FooterBar />
       </div>
+      <BackTop>
+        <FaArrowAltCircleUp size={56} className="text-red-500" />
+      </BackTop>
       <button
         className="fixed top-8 left-8 text-4xl z-10 text-gray-300 hover:text-white transition ease-in-out duration-150"
         onClick={() => {
