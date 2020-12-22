@@ -2,7 +2,6 @@ require("dotenv").config();
 
 const withPlugins = require("next-compose-plugins");
 const withImages = require("next-optimized-images");
-const withFonts = require("next-fonts");
 const withPWA = require("next-pwa");
 
 const envConfig = {
@@ -44,5 +43,5 @@ const settings = {
 
 module.exports =
   process.env.NODE_ENV === "development"
-    ? withPlugins([[withImages], withFonts], settings)
-    : withPlugins([withPWA, [withImages], withFonts], settings);
+    ? withPlugins([[withImages]], settings)
+    : withPlugins([withPWA, [withImages]], settings);

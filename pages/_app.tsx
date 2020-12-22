@@ -13,7 +13,6 @@ import "animate.css";
 import "antd/dist/antd.css";
 import "../style/custom-antd.css";
 import "../style/index.css";
-import "../style/animations.css";
 import "react-image-gallery/styles/css/image-gallery.css";
 
 // since "apollo" isn't a native Next.js prop we have to declare it's type.

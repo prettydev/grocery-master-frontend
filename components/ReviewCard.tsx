@@ -8,6 +8,7 @@ const ReviewCard = ({ review }: { review: IReview }) => {
         <div className="flex items-center mt-2 mb-4">
           {[1, 2, 3, 4, 5].map((s, i) => (
             <svg
+              key={i}
               className="mx-1 w-6 h-6 fill-current text-yellow-300"
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 20 20"
@@ -22,8 +23,8 @@ const ReviewCard = ({ review }: { review: IReview }) => {
       <div className="text-sm mx-auto">{review.location}</div>
     </div>
   ) : (
-    <></>
-  );
+      <></>
+    );
 };
 
 export default ReviewCard;

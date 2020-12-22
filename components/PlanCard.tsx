@@ -20,7 +20,7 @@ const PlanCard = ({ plan, onStart }) => {
       </div>
       <div className="mx-12 my-8 text-lg">
         {plan.descriptions.map((d, i) => (
-          <div>✓ {d}</div>
+          <div key={i}>✓ {d}</div>
         ))}
       </div>
       <div className="w-full mx-auto flex justify-center mb-8">
@@ -33,8 +33,8 @@ const PlanCard = ({ plan, onStart }) => {
       </div>
     </div>
   ) : (
-    <></>
-  );
+      <></>
+    );
 };
 
 export default PlanCard;
