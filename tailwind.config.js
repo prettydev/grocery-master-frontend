@@ -1,28 +1,12 @@
-const defaultTheme = require("tailwindcss/defaultTheme");
-
 module.exports = {
-  // purge: [
-  //   "./*.{ts,tsx}",
-  //   "./pages/**/*.{ts,tsx}",
-  //   "./containers/**/*.{ts,tsx}",
-  //   "./components/**/*.{ts,tsx}",
-  // ],
-  purge: false,
+  // purge: [],
+  purge: ['./pages/**/*.js', './components/**/*.js'],
+  darkMode: false, // or 'media' or 'class'
   theme: {
-    extend: {
-      fontFamily: {
-        sans: ["Inter var", ...defaultTheme.fontFamily.sans],
-      },
-    },
+    extend: {},
   },
-  variants: {},
-  plugins: [
-    require("@tailwindcss/ui")({
-      layout: "sidebar",
-    }),
-  ],
-  future: {
-    removeDeprecatedGapUtilities: true,
-    purgeLayersByDefault: true,
+  variants: {
+    extend: {},
   },
-};
+  plugins: [],
+}

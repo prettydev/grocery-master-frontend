@@ -1,14 +1,13 @@
 import React, { useState } from "react";
-import { Transition } from "@tailwindui/react";
+import { Transition } from "@headlessui/react";
 import TopGroceries from "../../containers/TopGroceries";
 import Pricing from "../../containers/Pricing";
 import AboutUs from "../../containers/AboutUs";
 import Impress from "../../containers/Impress";
-import Footer from "../../containers/FooterBar";
 
 import ScrollSpyMenu from "../../components/ScrollSpyMenu";
 
-import { Icon, InlineIcon } from "@iconify/react";
+import { Icon } from "@iconify/react";
 import menuSharp from "@iconify/icons-ion/menu-sharp";
 import closeIcon from "@iconify/icons-ion/close";
 import { BackTop } from "antd";

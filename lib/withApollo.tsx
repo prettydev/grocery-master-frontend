@@ -9,7 +9,7 @@ import {
 import { getDataFromTree } from "@apollo/client/react/ssr";
 import { getMainDefinition } from "@apollo/client/utilities";
 import { InMemoryCache } from "@apollo/client/cache";
-import { WebSocketLink } from "@apollo/link-ws";
+import { WebSocketLink } from "@apollo/client/link/ws";
 import fetch from "isomorphic-unfetch";
 
 export const withApollo = (

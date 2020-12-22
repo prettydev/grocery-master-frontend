@@ -8,6 +8,7 @@ import { NormalizedCacheObject } from "@apollo/client/cache";
 import { withApollo } from "../lib/withApollo";
 import { MapProvider } from "../context/store";
 
+import "tailwindcss/tailwind.css";
 import "animate.css";
 import "antd/dist/antd.css";
 import "../style/custom-antd.css";
