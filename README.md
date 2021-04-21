@@ -9,7 +9,7 @@
   </a>
 </p>
 
-# Auction frontend
+# Grocery frontend
 
 ## **Features:**
 
